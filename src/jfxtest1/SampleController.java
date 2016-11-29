@@ -22,7 +22,7 @@ public class SampleController {
 	@FXML
 	private ImageView currentFrame;
 	private ScheduledExecutorService timer;
-	private VideoCapture capture = new VideoCapture();
+	private VideoCapture capture;
 	private boolean cameraActive = false;
 	private static int cameraId = 0;
 	
@@ -31,8 +31,9 @@ public class SampleController {
 	{
 		if (!this.cameraActive)
 		{
+			 capture = new VideoCapture();
 			// start the video capture
-			this.capture.open(cameraId);
+			capture.open(cameraId);
 			
 			// is the video stream available?
 			if (this.capture.isOpened())
@@ -62,7 +63,7 @@ public class SampleController {
 			else
 			{
 				// log the error
-				System.err.println("Impossible to open the camera connection...");
+				System.out.println("Impossible to open the camera connection...");
 			}
 		}
 		else

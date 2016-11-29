@@ -12,8 +12,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Sample.fxml"));
-			BorderPane root = (BorderPane)loader.load();
-			Scene scene = new Scene(root,400,400);
+			BorderPane root = (BorderPane) loader.load();
+			Scene scene = new Scene(root, 400, 400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
